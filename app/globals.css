@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-poppins: var(--font-poppins);
+  --font-manrope: var(--font-manrope);
+  --font-abeezee: var(--font-abeezee);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+/* CSS-клас для skewX */
+.skew-slice {
+  transform: skewX(-20deg);
+  margin-left: -2px;
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Повертаємо зображення у нормальний вигляд */
+.skew-reset {
+  transform: skewX(20deg);
+}
+
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+::selection {
+  background-color: #F47820; /* Змінює колір фону на жовтий */
+  color: white; /* Змінює колір тексту на чорний */
+}
+
+
+@keyframes ping-slow {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.online-orb {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10CC00;
+  margin-right: 6px;
+  animation: ping-slow 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+
+@keyframes slide-close {
+  0% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes slide-close {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-slide-close {
+  animation: slide-close 1s forwards ease-in-out;
+}
+@keyframes slide-close {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-slide-close {
+  animation: slide-close 1s forwards ease-in-out;
+}
